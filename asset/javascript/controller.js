@@ -53,15 +53,22 @@ menuLinks.forEach(link => {
         e.preventDefault();
 
         const target = this.dataset.target;
+        const panel  = document.getElementById(target);
+        const isActive = this.classList.contains("active");
 
         // HAPUS ACTIVE SEMUA
-        panels.forEach(panel => panel.classList.remove("active"));
         menuLinks.forEach(l => l.classList.remove("active"));
+        panels.forEach(p => p.classList.remove("active"));
 
-        // AKTIFKAN YANG DIKLIK
-        document.querySelector(".body-right-aside").classList.add("clicked");
-        document.getElementById(target).classList.add("active");
-        this.classList.add("active");
+        if (!isActive) {
+            // AKTIFKAN
+            this.classList.add("active");
+            panel.classList.add("active");
+            bodyAside.classList.add("clicked");
+        } else {
+            // MATIKAN
+            bodyAside.classList.remove("clicked");
+        }
     });
     
     document.addEventListener("click", function (e) {
@@ -84,7 +91,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var bars3 = document.getElementsByClassName('bar-3');
 
     var bodNavMob = document.getElementsByClassName('body-nav-mob');
-    var searchBarTopMob = document.getElementById('search-bar-top-mob');
 
     var body = document.getElementsByTagName('body');
     
@@ -110,7 +116,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!isOpen) {
             // === OPEN ===
             nav.classList.add('active-body-nav-mob');
-            searchBarTopMob.classList.add('active-search-bar-top-mob');
 
             setTimeout(() => {
                 nav.classList.add('show-items');
@@ -122,7 +127,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
             setTimeout(() => {
                 nav.classList.remove('active-body-nav-mob');
-                searchBarTopMob.classList.remove('active-search-bar-top-mob');
             }, 400);
         }
         
@@ -135,14 +139,15 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 const texts = [
-    "Cari produk terbaik...",
-    "Cari layanan LKM...",
-    "Cari promo terbaru...",
-    "Cari informasi lainnya..."
+    "Menu Promo",
+    "Menu Produk & Layanan",
+    "Menu Informasi",
+    "Menu Keuangan"
 ];
 
 const input = document.getElementById("search_head");
 const placeholder = document.querySelector(".typing-placeholder");
+const placeholder2 = document.querySelector(".typing-placeholder-2");
 
 let textIndex = 0;
 let charIndex = 0;
@@ -156,14 +161,16 @@ function startTyping() {
         if (!isDeleting) {
             charIndex++;
             placeholder.textContent = currentText.slice(0, charIndex);
+            placeholder2.textContent = currentText.slice(0, charIndex);
 
             if (charIndex === currentText.length) {
                 isDeleting = true;
-                setTimeout(() => {}, 1000);
+                setTimeout(() => {}, 2500);
             }
         } else {
             charIndex--;
             placeholder.textContent = currentText.slice(0, charIndex);
+            placeholder2.textContent = currentText.slice(0, charIndex);
 
             if (charIndex === 0) {
                 isDeleting = false;
@@ -176,13 +183,43 @@ function startTyping() {
 /* STOP saat user fokus */
 input.addEventListener("focus", () => {
     placeholder.style.opacity = "0";
+    placeholder2.style.opacity = "0";
 });
 
 /* LANJUT saat kosong */
 input.addEventListener("blur", () => {
     if (!input.value) {
         placeholder.style.opacity = "1";
+        placeholder2.style.opacity = "1";
     }
 });
 
 startTyping();
+
+// Footer
+const buttons = document.querySelectorAll(
+    'footer .f-jsk .f-jsktext > div > button'
+);
+
+buttons.forEach(button => {
+    button.addEventListener('click', function () {
+
+        // desktop = mati
+        if (window.innerWidth > 991) return;
+
+        const parent = this.parentElement;
+        const arrow  = this.querySelector('.arrow-footer');
+
+        parent.classList.toggle('clicked');
+        arrow.classList.toggle('clicked');
+    });
+});
+
+// reset saat pindah ke desktop
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 991) {
+        document
+            .querySelectorAll('footer .f-jsk .f-jsktext .clicked')
+            .forEach(el => el.classList.remove('clicked'));
+    }
+});

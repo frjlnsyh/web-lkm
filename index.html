@@ -24,15 +24,13 @@
                     <img src="./asset/img/111.png" alt="">
                 </div>
                 <ul class="sub-nav-item">
-                    <li><a href="#">Menu 1</a></li>
-                    <li><a href="#">Menu 2</a></li>
-                    <li><a href="#">Menu 3</a></li>
-                    <li><a href="#">Menu 4</a></li>
-                    <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <li><a href="#">Beranda</a></li>
+                    <li><a href="#">Profil</a></li>
+                    <li><a href="#">Keuangan</a></li>
                     <li><a href="#"><i class="fa-solid fa-location-dot"></i></a></li>
                     <li>
                         <div class="button-nav">
-                            <button id="btn-1" value="id" type="submit">ID</button>
+                            <button id="btn-1" class="active" value="id" type="submit">ID</button>
                             <button id="btn-2" value="en" type="submit">EN</button>
                         </div>
                     </li>
@@ -43,7 +41,6 @@
                     <img src="./asset/img/111.png" alt="">
                 </div>
                 <ul class="sub-nav-item">
-                    <li id="search-bar-top-mob"><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
                     <li>
                         <button id="nav-bar">
                             <section class="bar-1"></section>
@@ -57,11 +54,11 @@
             <ul class="body-nav-mob">
                 <li id="search-bar-mob">
                     <input type="text">
+                    <span class="typing-placeholder-2"></span>
                 </li>
-                <li><a href="#">Menu 1</a></li>
-                <li><a href="#">Menu 2</a></li>
-                <li><a href="#">Menu 3</a></li>
-                <li><a href="#">Menu 4</a></li>
+                <li><a href="#">Beranda</a></li>
+                <li><a href="#">Profil</a></li>
+                <li><a href="#">Keuangan</a></li>
                 <li><a href="#"><i class="fa-solid fa-location-dot"></i></a></li>
                 <li>
                     <div class="button-nav">
@@ -80,52 +77,113 @@
                 <ul>
                     <li><a href="#" data-target="masuk"><span class="text">Masuk</span> <i class="fa-solid fa-right-to-bracket"></i></a></li>
                     <li><a href="#" data-target="produk"><span class="text">Produk</span> <i class="fa-solid fa-box"></i></a></li>
-                    <li><a href="#" data-target="layanan"><span class="text">Layanan</span> <i class="fa-solid fa-bell-concierge"></i></a></li>
+                    <li><a href="#" data-target="layanan"><span class="text">Informasi</span> <i class="fa-solid fa-bell-concierge"></i></a></li>
                     <li><a href="#" data-target="promo"><span class="text">Promo</span> <i class="fa-solid fa-percent"></i></a></li>
                     <li><a href="#" data-target="webform"><span class="text">Webform LKM</span> <i class="fa-brands fa-wpforms"></i></a></li>
                     <li><a href="#" data-target="kontak"><span class="text">Kontak</span> <i class="fa-solid fa-address-book"></i></a></li>
                     
-                    <div class="body-right-aside">
-
-                        <div class="content-panel" id="masuk">
-                            <h2>Masuk</h2>
-                            <p>Isi bebas: form login, text, dll</p>
-                        </div>
-
-                        <div class="content-panel" id="produk">
-                            <h2>Produk</h2>
-                            <p>Daftar produk</p>
-                        </div>
-
-                        <div class="content-panel" id="layanan">
-                            <h2>Layanan</h2>
-                            <p>Detail layanan</p>
-                        </div>
-
-                        <div class="content-panel" id="promo">
-                            <h2>Promo</h2>
-                            <p>Promo aktif</p>
-                        </div>
-
-                        <div class="content-panel" id="webform">
-                            <h2>Webform LKM</h2>
-                            <p>Form online</p>
-                        </div>
-
-                        <div class="content-panel" id="kontak">
-                            <h2>Kontak</h2>
-                            <p>Informasi kontak</p>
-                        </div>
-
-                    </div>
                 </ul>
             </aside>
 
+            <div class="body-right-aside">
+
+                <div class="content-panel" id="masuk">
+                    <h2>Masuk</h2>
+                    <form action="#" id="masuk_form">
+                        <div class="sign-in-username">
+                            <label for="">Nama Pengguna</label>
+                            <input class="username-sign-in" type="text">
+                        </div>
+
+                        <div class="sign-in-password">
+                            <label for="">Kata Sandi</label>
+                            <input class="password-sign-in" type="password">
+                        </div>
+
+                        <button type="submit">Masuk</button>
+                    </form>
+                </div>
+
+                <div class="content-panel" id="produk">
+                    <h2>Produk</h2>
+                    <p>Daftar produk</p>
+                </div>
+
+                <div class="content-panel" id="layanan">
+                    <h2>Layanan</h2>
+                    <p>Detail layanan</p>
+                </div>
+
+                <div class="content-panel" id="promo">
+                    <h2>Promo</h2>
+                    <p>Promo aktif</p>
+                </div>
+
+                <div class="content-panel" id="webform">
+                    <h2>Webform LKM</h2>
+                    <form action="" id="webform_form">
+                        <div class="content-webform-1">
+                            <div class="webform-name">
+                                <label for="">Nama Lengkap</label>
+                                <input class="name-webform" type="text">
+                            </div>
+                            <div class="webform-email">
+                                <label for="">Email</label>
+                                <input class="email-webform" type="email">
+                            </div>
+                        </div>
+
+
+                        <div class="webform-telp">
+                            <label for="">No. Telphone</label>
+                            <input type="tel" id="telphone" name="telphone" placeholder="08123456789" pattern="\d{3}-\d{3}-\d{4}" onkeyup="this.value = this.value.replace(/[^0-9-]/g, '');">
+                        </div>
+
+                        <div class="webform-alamat">
+                            <label for="">Alamat</label>
+                            <textarea name="alamat" id="alamat" rows="4"></textarea>
+                        </div>
+
+                        <div class="content-webform-2">
+                            <div class="webform-produk">
+                                <label for="">Produk yang diminati</label>
+                                <select name="produk" id="produk">
+                                    <option selected></option>
+                                    <option value="">Mikro</option>
+                                    <option value="">Mikro Karya</option>
+                                    <option value="">Multiguna</option>
+                                </select>
+                            </div>
+                            <div class="webform-cabang">
+                                <label for="">Pilih Cabang</label>
+                                <select name="cabang" id="cabang">
+                                    <option selected></option>
+                                    <option value="">Cabang Bogor</option>
+                                    <option value="">Cabang Jakarta</option>
+                                    <option value="">Cabang Depok</option>
+                                </select>
+                            </div>
+                            <div class="webform-message">
+                                <label for="">Tanggal</label>
+                                <input type="date" name="tanggal" id="tanggal">
+                            </div>
+                        </div>
+
+                        <button type="submit">Kirim</button>
+                    </form>
+                </div>
+
+                <div class="content-panel" id="kontak">
+                    <h2>Kontak</h2>
+                    <p>Informasi kontak</p>
+                </div>
+
+            </div>
 
             <div class="head-content">
                 <div class="search-bar-head">
                     <input id="search_head" type="text">
-                    <span class="typing-placeholder"></span>
+                        <span class="typing-placeholder"></span>
 
                     <div class="search-icon-bar-head">
                         <i class="fa-solid fa-magnifying-glass"></i>
@@ -134,12 +192,27 @@
                 
                 <div class="hhsddfds">
                     <div class="hhsddfds-1">
-                        <div class="wrapper"></div>
                         <div class="carousel">
                             <div class="carousel-track">
-                                <div class="slide active">Tulisan untuk slide pertama</div>
-                                <div class="slide">Tulisan untuk slide ke dua</div>
-                                <div class="slide">Tulisan untuk slide ke tiga</div>
+                                <div class="slide active">
+                                    <div class="wrapper"></div>
+                                    <div class="carousel-text">
+                                        Tulisan untuk slide pertama
+                                    </div>
+
+                                </div>
+                                <div class="slide">
+                                    <div class="wrapper"></div>
+                                    <div class="carousel-text">
+                                        Tulisan untuk slide ke dua
+                                    </div>
+                                </div>
+                                <div class="slide">
+                                    <div class="wrapper"></div>
+                                    <div class="carousel-text">
+                                        Tulisan untuk slide ke tiga
+                                    </div>
+                                </div>
                             </div>
 
                             <!-- Button -->
@@ -154,8 +227,7 @@
                         <div class="wrapper"></div>
                         <img src="https://tse4.mm.bing.net/th/id/OIP.j7OyaY1kBnY7AGsinTCgvwHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
                         <div class="text-head-crs">
-                            <h2>Judul Informasi</h2>
-                            <p>Deskripsi singkat informasi yang ditampilkan pada bagian ini.</p>
+                            <h3>Suku Bunga Deposito</h3>
                             <ul>
                                 <li>Keterangan 1</li>
                                 <li>Keterangan 2</li>
@@ -173,16 +245,73 @@
             </div>
 
             <div class="tessitytyysi">
+                <div class="prodss">
+                    <div class="prodss-1">
+                        <div class="prodss-1-1">
+                            <a href="#" class="active">
+                                Produk & Layanan
+                            </a>
+                        </div>
+                    </div>
+                    <div class="prodss-2">
+                        <a href="">
+                            <div class="card">
+                                <div class="card-img">
+                                    <img src="https://tse4.mm.bing.net/th/id/OIP.j7OyaY1kBnY7AGsinTCgvwHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-body-desc">
+                                        Tabungan
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <button>Lihat</button>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="card">
+                                <div class="card-img">
+                                    <img src="https://tse4.mm.bing.net/th/id/OIP.j7OyaY1kBnY7AGsinTCgvwHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-body-desc">
+                                        Deposito
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <button>Lihat</button>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="card">
+                                <div class="card-img">
+                                    <img src="https://tse4.mm.bing.net/th/id/OIP.j7OyaY1kBnY7AGsinTCgvwHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-body-desc">
+                                        Kredit
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <button>Lihat</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
                 <div class="xxlkfssdd">
                     <div class="xxlkfssddi">
                         <div class="xxlkfssddi-1">
                             <a href="#" class="active">
-                                Menu Promo Terbaru
+                                Promo Terbaru
                             </a>
                         </div>
                         <div class="xxlkfssddi-2">
                             <a href="#">
-                                Menu Lihat Selengkapnya >
+                                Lihat Selengkapnya
                             </a>
                         </div>
                     </div>
@@ -315,10 +444,10 @@
                         <div class="xxlkfssddi-1">
                             <div class="xxlkfssddi-1-1">
                                 <a href="#" class="active">
-                                    Menu 1
+                                    Berita & Kegiatan
                                 </a>
                             </div>
-                            <div class="xxlkfssddi-1-2">
+                            <!-- <div class="xxlkfssddi-1-2">
                                 <a href="#">
                                     Menu 2
                                 </a>
@@ -327,11 +456,11 @@
                                 <a href="#">
                                     #Hastag
                                 </a>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="xxlkfssddi-2">
                             <a href="#">
-                                menu_selanjutnya >
+                                Lihat Selengkapnya
                             </a>
                         </div>
                     </div>
@@ -459,26 +588,30 @@
                 </div>
                 <div class="f-jsktext">
                     <div class="f-jsktext-1">
-                        <button type="button">Kantor Pusat</button>
-                        <div class="f-jsktext-1-1">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium iusto earum
-                        </div>
-                        <div class="f-jsktext-1-1">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium iusto earum
+                        <button type="button">Kantor Pusat <span class="arrow-footer"><i class="fa-solid fa-angle-right"></i></span></button>
+                        <div class="content">
+                            <div class="f-jsktext-1-1">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium iusto earum
+                            </div>
+                            <div class="f-jsktext-1-1">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium iusto earum
+                            </div>
                         </div>
                     </div>
                     <div class="f-jsktext-2">
-                        <button type="button">Hubungi Kami</button>
-                        <div class="f-jsktext-2-1">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium iusto earum
-                        </div>
-                        <div class="f-jsktext-2-1">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium iusto earum
+                        <button type="button">Hubungi Kami <span class="arrow-footer"><i class="fa-solid fa-angle-right"></i></span></button>
+                        <div class="content">
+                            <div class="f-jsktext-2-1">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium iusto earum
+                            </div>
+                            <div class="f-jsktext-2-1">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium iusto earum
+                            </div>
                         </div>
                     </div>
                     <div class="f-jsktext-3">
-                        <button type="button">Media Sosial</button>
-                        <div class="wrapper-text">
+                        <button class="" type="button">Media Sosial <span class="arrow-footer"><i class="fa-solid fa-angle-right"></i></span></button>
+                        <div class="content wrapper-text">
                             <div class="f-jsktext-3-1">
                                 Instagram
                             </div>
