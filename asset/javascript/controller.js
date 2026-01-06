@@ -50,7 +50,9 @@ const panels = document.querySelectorAll(".content-panel");
 
 menuLinks.forEach(link => {
     link.addEventListener("click", function (e) {
-        e.preventDefault();
+        if(this.dataset.target === null) {
+            e.preventDefault();
+        }
 
         const target = this.dataset.target;
         const panel  = document.getElementById(target);
@@ -60,8 +62,19 @@ menuLinks.forEach(link => {
         menuLinks.forEach(l => l.classList.remove("active"));
         panels.forEach(p => p.classList.remove("active"));
 
+        if(!panel) {
+            bodyAside.classList.remove("clicked");
+        }
+
         if (!isActive) {
             // AKTIFKAN
+
+            if(!panel) {
+                bodyAside.classList.remove("clicked");
+                panel.classList.remove("active");
+
+            }
+
             this.classList.add("active");
             panel.classList.add("active");
             bodyAside.classList.add("clicked");
@@ -73,8 +86,6 @@ menuLinks.forEach(link => {
     
     document.addEventListener("click", function (e) {
         if (!aside.contains(e.target)) {
-            menuLinks.forEach(l => l.classList.remove("active"));
-            bodyAside.classList.remove("clicked");
             // kalau mau panel juga ikut hilang, buka komentar ini:
             // panels.forEach(p => p.classList.remove("active"));
         }

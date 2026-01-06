@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="./asset/img/111.png" type="image/x-icon">
+
+    <title>LKM Bogor</title>
+
+    <link rel="stylesheet" href="./asset/css/main.css">
+    <link rel="stylesheet" href="./asset/css/max-dev.css">
+    <link rel="stylesheet" href="./asset/css/min-dev.css">
+
+    <script src="https://kit.fontawesome.com/3723baec84.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Navbar -->
+        <nav>
+            <div class="nav-wrapper"></div>
+            <div class="nav-desk">
+                <div class="logo">
+                    <img src="./asset/img/111.png" alt="">
+                </div>
+                <ul class="sub-nav-item">
+                    <li><a href="./index.html">Beranda</a></li>
+                    <li><a href="./profil.html">Profil</a></li>
+                    <li><a href="./keuangan.html">Keuangan</a></li>
+                    <li><a href="#"><i class="fa-solid fa-location-dot"></i></a></li>
+                    <li>
+                        <div class="button-nav">
+                            <button id="btn-1" class="active" value="id" type="submit">ID</button>
+                            <button id="btn-2" value="en" type="submit">EN</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-mob">
+                <div class="logo">
+                    <img src="./asset/img/111.png" alt="">
+                </div>
+                <ul class="sub-nav-item">
+                    <li>
+                        <button id="nav-bar">
+                            <section class="bar-1"></section>
+                            <section class="bar-2"></section>
+                            <section class="bar-3"></section>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <!-- Mobile Body Nav -->
+            <ul class="body-nav-mob">
+                <li id="search-bar-mob">
+                    <input type="text">
+                    <span class="typing-placeholder-2"></span>
+                </li>
+                <li><a href="./index.html">Beranda</a></li>
+                <li><a href="./profil.html">Profil</a></li>
+                <li><a href="./keuangan.html">Keuangan</a></li>
+                <li><a href="#"><i class="fa-solid fa-location-dot"></i></a></li>
+                <li>
+                    <div class="button-nav">
+                        <button id="btn-1" value="id" type="submit">ID</button>
+                        <button id="btn-2" value="en" type="submit">EN</button>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+
+            <!-- Asidebar -->
+            <aside class="right-aside">
+                <ul>
+                    <li><a href="#" data-target="masuk"><span class="text">Beranda</span> <i class="fa-solid fa-house"></i></a></li>
+                    <li><a href="#" data-target="produk"><span class="text">Produk</span> <i class="fa-solid fa-box"></i></a></li>
+                    <li><a href="#" data-target="layanan"><span class="text">Informasi</span> <i class="fa-solid fa-bell-concierge"></i></a></li>
+                    <li><a href="#" data-target="promo"><span class="text">Promo</span> <i class="fa-solid fa-percent"></i></a></li>
+                    <li><a href="#" data-target="webform"><span class="text">Webform LKM</span> <i class="fa-brands fa-wpforms"></i></a></li>
+                    <li><a href="#" data-target="kontak"><span class="text">Kontak</span> <i class="fa-solid fa-address-book"></i></a></li>
+                    
+                </ul>
+            </aside>
+
+            <div class="body-right-aside">
+
+                <div class="content-panel" id="produk">
+                    <h2>Produk</h2>
+                    <p>Daftar produk</p>
+                </div>
+
+                <div class="content-panel" id="layanan">
+                    <h2>Layanan</h2>
+                    <p>Detail layanan</p>
+                </div>
+
+                <div class="content-panel" id="promo">
+                    <h2>Promo</h2>
+                    <p>Promo aktif</p>
+                </div>
+
+                <div class="content-panel" id="webform">
+                    <h2>Webform LKM</h2>
+                    <form action="" id="webform_form">
+                        <div class="content-webform-1">
+                            <div class="webform-name">
+                                <label for="">Nama Lengkap</label>
+                                <input class="name-webform" type="text">
+                            </div>
+                            <div class="webform-email">
+                                <label for="">Email</label>
+                                <input class="email-webform" type="email">
+                            </div>
+                        </div>
+
+
+                        <div class="webform-telp">
+                            <label for="">No. Telphone</label>
+                            <input type="tel" id="telphone" name="telphone" placeholder="08123456789" pattern="\d{3}-\d{3}-\d{4}" onkeyup="this.value = this.value.replace(/[^0-9-]/g, '');">
+                        </div>
+
+                        <div class="webform-alamat">
+                            <label for="">Alamat</label>
+                            <textarea name="alamat" id="alamat" rows="4"></textarea>
+                        </div>
+
+                        <div class="content-webform-2">
+                            <div class="webform-produk">
+                                <label for="">Produk yang diminati</label>
+                                <select name="produk" id="produk">
+                                    <option selected></option>
+                                    <option value="">Mikro</option>
+                                    <option value="">Mikro Karya</option>
+                                    <option value="">Multiguna</option>
+                                </select>
+                            </div>
+                            <div class="webform-cabang">
+                                <label for="">Pilih Cabang</label>
+                                <select name="cabang" id="cabang">
+                                    <option selected></option>
+                                    <option value="">Cabang Bogor</option>
+                                    <option value="">Cabang Jakarta</option>
+                                    <option value="">Cabang Depok</option>
+                                </select>
+                            </div>
+                            <div class="webform-message">
+                                <label for="">Tanggal</label>
+                                <input type="date" name="tanggal" id="tanggal">
+                            </div>
+                        </div>
+
+                        <button type="submit">Kirim</button>
+                    </form>
+                </div>
+
+                <div class="content-panel" id="kontak">
+                    <h2>Kontak</h2>
+                    <p>Informasi kontak</p>
+                </div>
+
+            </div>
+
+            <div class="head-content">
+                <div class="search-bar-head">
+                    <input id="search_head" type="text">
+                        <span class="typing-placeholder"></span>
+
+                    <div class="search-icon-bar-head">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+                
+                <div class="hhsddfds">
+                    <div class="hhsddfds-1">
+                        <div class="carousel">
+                            <div class="carousel-track">
+                                <div class="slide active">
+                                    <div class="wrapper"></div>
+                                    <div class="carousel-text">
+                                        Tulisan untuk slide pertama
+                                    </div>
+
+                                </div>
+                                <div class="slide">
+                                    <div class="wrapper"></div>
+                                    <div class="carousel-text">
+                                        Tulisan untuk slide ke dua
+                                    </div>
+                                </div>
+                                <div class="slide">
+                                    <div class="wrapper"></div>
+                                    <div class="carousel-text">
+                                        Tulisan untuk slide ke tiga
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Button -->
+                            <button class="btn prev">&#10094;</button>
+                            <button class="btn next">&#10095;</button>
+
+                            <!-- Dots -->
+                            <div class="dots"></div>
+                        </div>
+                    </div>
+                    <div class="hhsddfds-2">
+                        <div class="wrapper"></div>
+                        <img src="https://tse4.mm.bing.net/th/id/OIP.j7OyaY1kBnY7AGsinTCgvwHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
+                        <div class="keuangan">
+                            <h3>Laporan Publikasi</h3>
+                            <button type="button" id="buttonPublikasi">Lihat Laporan Publikasi</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="body-modal-bar">
+                    <div class="close-modal">
+                        <i class="fa-solid fa-circle-xmark" id="close-modal-pengurus"></i>
+                    </div>
+                    <div class="modal-head">
+                        <h2>Laporan Publikasi</h2>
+                        <hr>
+                    </div>
+                    <div class="modal-body">
+                        <form action="#" id="laporanPublikasi">
+                            <input type="date" required>
+
+                            <div class="pdf-generate">
+                                <a href="#">Save PDF</a>
+                                <iframe
+                                    src="./asset/pdf/pdf_xample.pdf"
+                                    width="100%"
+                                    height="100%"
+                                    frameborder="0"
+                                ></iframe>
+                            </div>
+
+                            <button type="button" id="searchLaporanPublikasi">Cari Laporan</button>
+                        </form>
+
+                    </div>
+                </div>
+
+                <div class="oottspr">
+                    <i class="fa-solid fa-arrow-down"></i> Scroll Ke Bawah Untuk Informasi
+                </div>
+            </div>
+        </main>
+
+        <!-- footer -->
+        <footer>
+            <div class="f-jsk">
+                <div class="f-jsklog">
+                    <img src="./asset/img/111.png" alt="">
+                </div>
+                <div class="f-jsktext">
+                    <div class="f-jsktext-1">
+                        <button type="button">Kantor Pusat <span class="arrow-footer"><i class="fa-solid fa-angle-right"></i></span></button>
+                        <div class="content">
+                            <div class="f-jsktext-1-1">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium iusto earum
+                            </div>
+                            <div class="f-jsktext-1-1">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium iusto earum
+                            </div>
+                        </div>
+                    </div>
+                    <div class="f-jsktext-2">
+                        <button type="button">Hubungi Kami <span class="arrow-footer"><i class="fa-solid fa-angle-right"></i></span></button>
+                        <div class="content">
+                            <div class="f-jsktext-2-1">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium iusto earum
+                            </div>
+                            <div class="f-jsktext-2-1">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium iusto earum
+                            </div>
+                        </div>
+                    </div>
+                    <div class="f-jsktext-3">
+                        <button class="" type="button">Media Sosial <span class="arrow-footer"><i class="fa-solid fa-angle-right"></i></span></button>
+                        <div class="content wrapper-text">
+                            <div class="f-jsktext-3-1">
+                                Instagram
+                            </div>
+                            <div class="f-jsktext-3-1">
+                                facebook
+                            </div>
+                            <div class="f-jsktext-3-1">
+                                Twitter
+                            </div>
+                            <div class="f-jsktext-3-1">
+                                youtube
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="f-hr">
+                <div class="f-jsk-perms">
+                    <div class="perms-1">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus voluptatum et, vel laudantium aspernatur
+                    </div>
+                    <div class="perms-2">
+                        <a href="#">
+                            Perms 1
+                        </a>
+                        |
+                        <a href="#">
+                            Perms 2
+                        </a>
+                        |
+                        <a href="#">
+                            Perms 3
+                        </a>
+                    </div>
+                </div>
+                <div class="f-jsk-terms">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, ab iste. Similique molestiae recusandae deleniti illum excepturi, alias ipsam, corrupti ea ratione animi deserunt est esse quod, molestias itaque magni. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste mollitia labore maxime iusto illum, sapiente qui. Tempora quos repudiandae quisquam facilis beatae voluptatem rem voluptatum blanditiis, doloribus, eveniet non! Mollitia.
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/asset/javascript/controller.js"></script>
+    <script src="/asset/javascript/xxcrsHm.js"></script>
+
+    <script>
+        
+        document.addEventListener("DOMContentLoaded", function () {
+            const buttonPub = document.getElementById("buttonPublikasi");
+            const modalPub = document.querySelector(".body-modal-bar");
+            const closeModalPub = document.getElementById("close-modal-pengurus");
+            
+            buttonPub.addEventListener("click", () => {
+                modalPub.classList.add("clicked");
+            });
+
+            closeModalPub.addEventListener("click", function (e) {
+                modalPub.classList.remove("clicked");
+            });
+        });
+
+    </script>
+</body>
+</html>
